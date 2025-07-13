@@ -1,0 +1,5 @@
+# IDE ve editör dosyaları
+.idea/
+*.iml
+.vscode/
+*.swp
