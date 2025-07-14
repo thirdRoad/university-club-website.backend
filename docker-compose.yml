@@ -5,11 +5,16 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./src:/app
     command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - postgres
   postgres:
     image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
     environment:
-      POSTGRES_DB: veritabani_adi
-      POSTGRES_USER: kullanici_adi
-      POSTGRES_PASSWORD: sifre
+      POSTGRES_DB: deneme_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: asd123
