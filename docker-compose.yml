@@ -1,8 +1,15 @@
 services:
   web:
     build: .
+    image: backend
     ports:
       - "8000:8000"
     volumes:
       - ./src:/app
     command: python manage.py runserver 0.0.0.0:8000
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: veritabani_adi
+      POSTGRES_USER: kullanici_adi
+      POSTGRES_PASSWORD: sifre
