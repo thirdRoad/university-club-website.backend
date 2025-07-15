@@ -1,14 +1,4 @@
 services:
-  web:
-    build: .
-    image: backend
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./src:/app
-    command: python manage.py runserver 0.0.0.0:8000
-    depends_on:
-      - postgres
   postgres:
     image: postgres
     restart: always
@@ -18,3 +8,13 @@ services:
       POSTGRES_DB: deneme_db
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: asd123
+  web:
+    build: .
+    image: backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app
+    command: [ "/wait-for-it.sh", "postgres:5432", "--", "sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000" ]
+    depends_on:
+      - postgres
