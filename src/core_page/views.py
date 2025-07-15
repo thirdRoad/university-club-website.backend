@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the base page.")
+    return JsonResponse(data={"name"  : "eren"})
+
