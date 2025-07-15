@@ -2,5 +2,9 @@ from django.http import HttpResponse,JsonResponse
 
 
 def index(request):
-    return JsonResponse(data={"name"  : "eren"})
+    data = {
+    "name": "eren",
+    "user": "admin"
+    }
+    return JsonResponse(data)
 
