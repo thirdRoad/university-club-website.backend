@@ -1,5 +1,13 @@
-# İnstall docker (not necessary to, pip install django)
+**Getting Started**
+1. Prerequisites: 
+Docker, Docker Compose, and Poetry must be installed.
 
-- docker compose build -> a new build. (if you are started over necessary the build)
-- docker copmose up -> up the project. & container works on it src directory
-- localhost:8000  
+2. Setup:
+docker compose build (if starting from scratch or a new build is needed)
+docker compose up
+
+3. Access: The application is available at localhost:8000.
+
+**For Developers**
+- Ensure pre-commit hooks are running.
+- Name new branches with prefixes like feat/, bug/, imp/.
