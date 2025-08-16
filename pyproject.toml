@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "university-club-website-backend"
+version = "0.1.0"
+description = ""
+authors = ["denizugurgenc02 <deniz.genc@octoxlabs.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.2.5"
+psycopg2-binary = "^2.9.10"
+djangorestframework = "^3.16.1"
+django-cors-headers = "^4.7.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.3.0"
+pre-commit = "^4.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
