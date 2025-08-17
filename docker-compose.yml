@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:17-alpine
-    container_name: university-club-website-network-postgres
+    container_name: university-club-website-postgres
     restart: always
     ports:
       - "5432:5432"
@@ -16,7 +16,7 @@ services:
       retries: 3
       start_period: 30s
   django:
-    container_name: university-club-website-network-django
+    container_name: university-club-website-django
     restart: always
     build: .
     ports:

@@ -1,4 +1,4 @@
-# IDE ve editör dosyaları
+# editor
 .idea/
 *.iml
 .vscode/
@@ -23,7 +23,7 @@ memory_coverage/
 *.db
 *.sqlite3
 
-# geçici dosyalar
+# temps
 *.log
 *.bak
 *.tmp
