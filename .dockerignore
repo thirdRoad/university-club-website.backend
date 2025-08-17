@@ -1,0 +1,13 @@
+# python objects
+__pycache__/
+*.pyc
+
+# virtual env
+venv/
+.venv/
+
+# memory leak reports
+memory_coverage/
+
+# editor
+.idea/
