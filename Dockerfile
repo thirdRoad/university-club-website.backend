@@ -2,12 +2,16 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY wait-for-it.sh ./
-RUN chmod +x ./wait-for-it.sh
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y curl
+
+COPY pyproject.toml poetry.lock ./
+RUN pip install --no-cache-dir poetry
+RUN poetry install --no-root
 
 COPY . .
 
-RUN pip install poetry
-RUN poetry install
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-CMD [ "/app/wait-for-it.sh", "postgres:5432", "--", "sh", "-c", "poetry run python src/manage.py migrate && poetry run python src/manage.py runserver 0.0.0.0:8000" ]
+ENTRYPOINT ["/entrypoint.sh"]
