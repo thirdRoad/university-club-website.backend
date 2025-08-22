@@ -31,14 +31,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Application definition
+
 INSTALLED_APPS = [
-    # "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "corsheaders",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # Third-Party Apps
+    'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    
+    # Local Apps
+    'core.apps.CoreConfig',
+    'auth.apps.AuthConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +142,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# Projenin tamamında bizim yazdığımız CustomUser modelinin kullanılacağını belirtir.
+AUTH_USER_MODEL = 'auth.CustomUser'
