@@ -11,3 +11,5 @@ docker compose up
 **For Developers**
 - Ensure pre-commit hooks are running.
 - Name new branches with prefixes like feat/, bug/, imp/.
+
+sonarqube deneme
